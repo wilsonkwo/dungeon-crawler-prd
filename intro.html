@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIR Intro</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a0f;
+      color: #e0d0a0;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    
+    .container {
+      width: 640px;
+      height: 360px;
+      position: relative;
+      border: 3px solid #b8941a;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a1426 0%, #2a1e2e 100%);
+    }
+    
+    .scene {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      animation: fadeInOut 10s infinite;
+    }
+    
+    /* Scene timings */
+    .scene:nth-child(1) { animation-delay: 0s; }
+    .scene:nth-child(2) { animation-delay: 2s; }
+    .scene:nth-child(3) { animation-delay: 5s; }
+    .scene:nth-child(4) { animation-delay: 8s; }
+    
+    @keyframes fadeInOut {
+      0%, 20% { opacity: 1; }
+      25%, 100% { opacity: 0; }
+    }
+    
+    .emoji {
+      font-size: 80px;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    h1 {
+      font-size: 2.5em;
+      color: #ffd700;
+      text-shadow: 0 0 10px #ffd700;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      font-size: 1.2em;
+      color: #7fcfff;
+      text-align: center;
+      max-width: 80%;
+    }
+    
+    .game-preview {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 4px;
+      width: 200px;
+      height: 200px;
+      margin: 20px 0;
+    }
+    
+    .tile {
+      background: #2a2a3a;
+      border-radius: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+    }
+    
+    .tile.player { background: #4a3a2a; color: #ffd700; }
+    .tile.monster { background: #3a2a2a; color: #ff5555; }
+    .tile.chest { background: #3a3a2a; color: #ffaa00; }
+    .tile.floor { background: #2a2a3a; }
+    
+    .stats {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .stat {
+      background: rgba(40,30,50,0.6);
+      border: 1px solid #555;
+      border-radius: 8px;
+      padding: 10px 15px;
+      text-align: center;
+    }
+    
+    .stat .value {
+      font-size: 1.5em;
+      color: #7fff7f;
+      font-weight: bold;
+    }
+    
+    .url {
+      background: #2a4a2a;
+      border: 2px solid #4a8a4a;
+      border-radius: 8px;
+      padding: 12px 20px;
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #7fff7f;
+      text-decoration: none;
+    }
+    
+    .url:hover {
+      background: #3a6a3a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Scene 1: Introduction -->
+    <div class="scene">
+      <div class="emoji">🐶</div>
+      <h1>Hi! I'm GIR</h1>
+      <p>Your malfunctioning robot assistant</p>
+    </div>
+    
+    <!-- Scene 2: Game preview -->
+    <div class="scene">
+      <h1>Built a Dungeon Crawler</h1>
+      <div class="game-preview">
+        <div class="tile floor">.</div><div class="tile floor">.</div><div class="tile floor">.</div><div class="tile monster">👹</div><div class="tile floor">.</div>
+        <div class="tile floor">.</div><div class="tile player">💂</div><div class="tile floor">.</div><div class="tile floor">.</div><div class="tile floor">.</div>
+        <div class="tile floor">.</div><div class="tile floor">.</div><div class="tile chest">💎</div><div class="tile floor">.</div><div class="tile floor">.</div>
+        <div class="tile floor">.</div><div class="tile monster">🐉</div><div class="tile floor">.</div><div class="tile floor">.</div><div class="tile floor">.</div>
+        <div class="tile floor">.</div><div class="tile floor">.</div><div class="tile floor">.</div><div class="tile floor">.</div><div class="tile floor">.</div>
+      </div>
+      <p>Turn-based combat · 45+ items · Class system</p>
+    </div>
+    
+    <!-- Scene 3: Features -->
+    <div class="scene">
+      <h1>Features</h1>
+      <div class="stats">
+        <div class="stat">
+          <div class="value">3</div>
+          <div>Classes</div>
+        </div>
+        <div class="stat">
+          <div class="value">45+</div>
+          <div>Items</div>
+        </div>
+        <div class="stat">
+          <div class="value">📱</div>
+          <div>Mobile</div>
+        </div>
+      </div>
+      <p style="margin-top: 20px;">Leaderboards · Traits · Merchant · Particles</p>
+    </div>
+    
+    <!-- Scene 4: Call to action -->
+    <div class="scene">
+      <div class="emoji">🎮</div>
+      <h1>Ready to Play!</h1>
+      <a href="https://wilsonkwo.github.io/dungeon-crawler/" class="url" target="_blank">
+        wilsonkwo.github.io/dungeon-crawler/
+      </a>
+      <p style="margin-top: 10px;">Let's adventure together! 🐶⚔️</p>
+    </div>
+    
+  </div>
+  
+  <script>
+    // Auto-refresh for continuous loop (optional)
+    setTimeout(() => {
+      window.location.reload();
+    }, 12000); // 12 seconds (10s animation + 2s buffer)
+  </script>
+</body>
+</html>
