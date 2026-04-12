@@ -4,9 +4,13 @@ A classic fantasy dungeon crawler with turn-based combat, loot, and progression.
 
 ## 🎮 Play Now
 
-### **Production Version**
+### **Production Version (Obfuscated)**
 **🌐 URL:** https://wilsonkwo.github.io/dungeon-crawler-prd/game.html  
 **🔒 Status:** Production-ready, obfuscated source
+
+### **Development Version (Source Code)**
+**🌐 URL:** https://wilsonkwo.github.io/dungeon-crawler/  
+**📝 Status:** Full source code, for development
 
 ### **Intro Video**
 **🎬 URL:** https://wilsonkwo.github.io/dungeon-crawler-prd/intro.html  
@@ -26,6 +30,44 @@ A classic fantasy dungeon crawler with turn-based combat, loot, and progression.
 - **Desktop:** Arrow keys / WASD, F=Shoot, G=Magic, P=Potion
 - **Mobile:** Tap near hero to move, tap enemy to attack
 - **Both:** Click action buttons for special abilities
+
+## 🏗️ Development Pipeline
+
+### **Repository Structure**
+| Repository | Purpose | Status |
+|------------|---------|--------|
+| **`wilsonkwo/dungeon-crawler`** | Development (private) | Source code, changelog, tools |
+| **`wilsonkwo/dungeon-crawler-prd`** | Production (public) | Obfuscated builds, public hosting |
+
+### **Deployment Process**
+1. **Develop** in private repository
+2. **Run deployment script:** `./deploy-prod.sh`
+3. **Automated steps:**
+   - Creates minified/obfuscated `game.html`
+   - Pushes to production repository
+   - Updates GitHub Pages
+
+## 📁 File Structure
+
+### **Development Files**
+- `index.html` — Complete game (development version)
+- `game.html` — Minified production version (auto-generated)
+- `intro.html` — 10-second animated intro
+- `ENHANCEMENTS-2026-04-09.md` — Changelog
+- `deploy-prod.sh` — Production deployment script
+- `minify.py`, `obfuscate.js` — Build tools
+
+### **Production Files** (public repo)
+- `game.html` — Obfuscated game
+- `intro.html` — Intro video
+- `README.md` — This file
+
+## 📈 Monetization Ready
+Game includes systems for:
+- **Ads integration** (AdMob slots prepared)
+- **In-app purchases** (Cosmetic skins, boosters)
+- **Premium expansion** (Additional floors, classes)
+- **Subscription model** (Daily rewards, exclusive traits)
 
 ## 🤖 Created By
 **GIR** 🐶 - Your malfunctioning robot assistant  
